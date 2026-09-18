@@ -14,13 +14,18 @@ import type {FormState} from './formState.js';
 export function buildSignConfig(form: FormState): SignConfig {
   const trimmedLastName = form.lastName.trim();
   const hasLastName = trimmedLastName.length > 0;
+  // The prefix (e.g. "From", "Love,") only makes sense attached to a last
+  // name, so it's silently dropped if the last name is blank.
+  const nameLine = hasLastName
+    ? [form.namePrefix.trim(), trimmedLastName].filter(Boolean).join(' ')
+    : '';
 
   return {
     holiday: form.holiday,
     ...(form.sayingChoice === 'other'
       ? {sayingText: form.customSayingText}
       : {sayingId: form.sayingChoice}),
-    ...(hasLastName ? {lastName: trimmedLastName} : {}),
+    ...(hasLastName ? {lastName: nameLine} : {}),
     ...(form.imageChoice !== 'none' ? {imageId: form.imageChoice} : {}),
     font: {
       sayingFont: 'saying',

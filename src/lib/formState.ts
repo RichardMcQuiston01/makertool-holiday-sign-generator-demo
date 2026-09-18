@@ -12,6 +12,8 @@ export interface FormState {
   /** A saying id from the holiday's catalog, or `'other'` for custom text. */
   readonly sayingChoice: string;
   readonly customSayingText: string;
+  /** Optional text rendered right before the last name, e.g. "From" or "Love,". */
+  readonly namePrefix: string;
   readonly lastName: string;
   /** An image id from the holiday's catalog, or `'none'` for no image. */
   readonly imageChoice: string;
@@ -35,6 +37,7 @@ export function createDefaultFormState(): FormState {
     holiday: DEFAULT_HOLIDAY,
     sayingChoice: content.sayings[0]?.id ?? 'other',
     customSayingText: '',
+    namePrefix: '',
     lastName: '',
     imageChoice: content.images[0]?.id ?? 'none',
     shape: 'rectangle',
