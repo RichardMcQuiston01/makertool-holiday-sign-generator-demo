@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Work Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@font-face {
+  font-family: 'Work Sans Demo';
+  src: url('/fonts/WorkSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Nothing You Could Do Demo';
+  src: url('/fonts/NothingYouCouldDo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Young Serif Demo';
+  src: url('/fonts/YoungSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Demo';
+  src: url('/fonts/BigShoulders-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Silkscreen Demo';
+  src: url('/fonts/Silkscreen-Regular.ttf') format('truetype');
+}
+
+body {
+  background-color: #0f1115;
+  color: #f2f2f2;
+}
