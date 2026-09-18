@@ -123,6 +123,25 @@ export function SignForm({
         </Field>
       ) : null}
 
+      <Field label="Name prefix (optional)">
+        <input
+          className={inputClassName}
+          type="text"
+          list="name-prefix-suggestions"
+          value={form.namePrefix}
+          placeholder="e.g. From, Love,"
+          onChange={event =>
+            onChange({...form, namePrefix: event.target.value})
+          }
+        />
+        <datalist id="name-prefix-suggestions">
+          <option value="From" />
+          <option value="Love," />
+          <option value="With Love," />
+          <option value="The" />
+        </datalist>
+      </Field>
+
       <Field label="Last name (optional)">
         <input
           className={inputClassName}
