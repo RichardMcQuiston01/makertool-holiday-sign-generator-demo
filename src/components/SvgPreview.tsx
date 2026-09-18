@@ -40,7 +40,9 @@ export function SvgPreview({files}: SvgPreviewProps) {
           // The generated SVG carries physical width/height attributes
           // (e.g. "10in"), which browsers render at ~96dpi — this override
           // makes it scale down to the container instead of overflowing it.
-          className="[&_svg]:h-auto [&_svg]:w-full rounded-xl border border-slate-700 bg-white p-4"
+          // The "sign-preview" class also drives the readability fix for
+          // hairline strokes in index.css.
+          className="sign-preview [&_svg]:h-auto [&_svg]:w-full rounded-xl border border-slate-700 bg-white p-4"
           // Trusted content: svgFile.content is generated locally by
           // @richardmcquiston01/holiday-sign-generator, never user HTML.
           dangerouslySetInnerHTML={{__html: svgFile.content}}
