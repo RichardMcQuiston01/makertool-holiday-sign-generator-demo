@@ -33,11 +33,9 @@ npm run typecheck   # type-check without emitting
 
 ### Examples
 
-This app depends directly on the `dev` branch of
-[makertool-holiday-sign-generator](https://github.com/RichardMcQuiston01/makertool-holiday-sign-generator)
-via a git dependency (see `package.json`) until the package has its first npm
-release — at that point this can switch to a normal semver `^x.y.z` dependency
-from the npm registry.
+This app depends on
+[`@richardmcquiston01/holiday-sign-generator`](https://www.npmjs.com/package/@richardmcquiston01/holiday-sign-generator)
+from the npm registry (see `package.json`).
 
 Fonts used in this demo (`public/fonts/`) are bundled under the SIL Open Font
 License; see each font's accompanying `*-OFL.txt` file.

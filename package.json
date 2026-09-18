@@ -17,7 +17,7 @@
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "@richardmcquiston01/holiday-sign-generator": "github:RichardMcQuiston01/makertool-holiday-sign-generator#dev",
+    "@richardmcquiston01/holiday-sign-generator": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
