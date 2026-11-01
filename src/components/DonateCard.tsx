@@ -2,7 +2,7 @@
  * React / Next.js variant of the floating donate card.
  *
  * Pair with donate-widget.css (import it, or port the rules into your styling
- * system). Props exist so a project can point at a different Stripe link or
+ * system). Props exist so a project can point at a different PayPal link or
  * QR path without editing the component.
  */
 import {useCallback, useEffect, useState} from 'react';
@@ -11,7 +11,7 @@ import type {ReactElement} from 'react';
 const STORAGE_KEY = 'donate-card-dismissed';
 
 export interface DonateCardProps {
-  /** Stripe payment link the card sends people to. */
+  /** PayPal payment link the card sends people to. */
   readonly donateUrl?: string;
   /** Path to the generated QR SVG, relative to the served root. */
   readonly qrSrc?: string;
@@ -20,8 +20,8 @@ export interface DonateCardProps {
 }
 
 export function DonateCard({
-  donateUrl = 'https://donate.stripe.com/00w5kD3Gj1Xo9v7gVOcs800',
-  qrSrc = '/donate.svg',
+  donateUrl = 'https://www.paypal.com/ncp/payment/FJNWZ8BQ4UHDA',
+  qrSrc = '/donate.png',
   dismissible = true,
 }: DonateCardProps): ReactElement | null {
   // Start hidden and reveal after mount: reading localStorage during render
@@ -83,7 +83,7 @@ export function DonateCard({
       <div className="donate-card__qr">
         <img
           src={qrSrc}
-          alt="QR code linking to the Stripe donation page"
+          alt="QR code linking to the PayPal donation page"
           width={180}
           height={180}
         />
@@ -94,9 +94,9 @@ export function DonateCard({
         href={donateUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Donate via Stripe, opens in a new tab"
+        aria-label="Donate via PayPal, opens in a new tab"
       >
-        Donate via Stripe <span aria-hidden="true">&rarr;</span>
+        Donate via PayPal <span aria-hidden="true">&rarr;</span>
       </a>
     </aside>
   );
