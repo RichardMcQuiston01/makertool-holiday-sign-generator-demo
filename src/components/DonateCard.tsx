@@ -20,7 +20,7 @@ export interface DonateCardProps {
 }
 
 export function DonateCard({
-  donateUrl = 'https://www.paypal.com/ncp/payment/FJNWZ8BQ4UHDA',
+  donateUrl = 'https://ko-fi.com/P1V529Z7ZP',
   qrSrc = '/donate.png',
   dismissible = true,
 }: DonateCardProps): ReactElement | null {
@@ -83,7 +83,7 @@ export function DonateCard({
       <div className="donate-card__qr">
         <img
           src={qrSrc}
-          alt="QR code linking to the PayPal donation page"
+          alt="QR code linking to the Ko-fi donation page"
           width={180}
           height={180}
         />
@@ -94,9 +94,9 @@ export function DonateCard({
         href={donateUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Donate via PayPal, opens in a new tab"
+        aria-label="Support on Ko-fi, opens in a new tab"
       >
-        Donate via PayPal <span aria-hidden="true">&rarr;</span>
+        Support on Ko-fi <span aria-hidden="true">&rarr;</span>
       </a>
     </aside>
   );
